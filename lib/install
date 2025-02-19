@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+git clone git@github.com:junegunn/fzf.git $HOME/lib/fzf
+$HOME/lib/fzf/install
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+#!/bin/bash
+
+# Update package lists
+sudo apt-get update
+
+# Install Zsh
+sudo apt-get install zsh -y
+
+# Check if Zsh is the default shell
+if [[ $(basename $SHELL) != "zsh" ]]; then
+    chsh -s $(which zsh)
+fi
+
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Install dependencies for Homebrew
+sudo apt-get install -y build-essential curl file git
+
+# Initialize Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add Homebrew to PATH
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bashrc
+source ~/.bashrc
+
+# Install packages
+brew install gh echidna fzf gcc go jq medusa node ripgrep solc-select tmux neovim
+
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+
+
+
