@@ -21,7 +21,6 @@ typeset -U path=(
     '/home/thomas/.local/scripts'
     '/home/thomas/dev'
 )
-
 # Editor configuration
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nvim'
