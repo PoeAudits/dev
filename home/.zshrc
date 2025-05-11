@@ -125,6 +125,7 @@ typeset -U path=(
     '/snap/bin'
     '/home/thomas/.foundry/bin'
     '/home/thomas/.cargo/bin'
+    '/home/thomas/go/bin'
     '/home/thomas/.local/scripts'
     '/home/thomas/dev'
 )

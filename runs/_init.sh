@@ -30,7 +30,7 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
 source ~/.bashrc
 #
 # # Install packages
-brew install gh fzf gcc jq medusa node ripgrep solc-select tmux neovim 
+brew install gh fzf gcc jq medusa node ripgrep solc-select tmux 
 #
 # curl -L https://foundry.paradigm.xyz | bash
 # foundryup
