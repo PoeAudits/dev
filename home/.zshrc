@@ -3,6 +3,15 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Zsh history settings
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+HISTSIZE=1000
+SAVEHIST=2000
+HISTFILE=~/.zsh_history
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -72,8 +81,11 @@ ZSH_THEME="clean"
 plugins=(git)
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
-source $ZSH_CACHE_DIR/completions/forge.zsh
-source $ZSH_CACHE_DIR/completions/cast.zsh
+
+if [[ -f $ZSH_CACHE_DIR/completions/forge.zsh ]]; then
+	source $ZSH_CACHE_DIR/completions/forge.zsh
+	source $ZSH_CACHE_DIR/completions/cast.zsh
+fi
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -123,11 +135,11 @@ typeset -U path=(
     '/sbin'
     '/bin'
     '/snap/bin'
-    '/home/thomas/.foundry/bin'
-    '/home/thomas/.cargo/bin'
-    '/home/thomas/go/bin'
-    '/home/thomas/.local/scripts'
-    '/home/thomas/dev'
+    '$HOME/.foundry/bin'
+    '$HOME/.cargo/bin'
+    '$HOME/go/bin'
+    '$HOME/.local/scripts'
+    '$HOME/dev'
 )
 
 # Editor configuration
@@ -139,11 +151,6 @@ fi
 
 # NVM configuration
 export NVM_DIR="$HOME/.nvm"
-
-# Source .zshrc for interactive shell settings
-if [[ -f ~/.zshrc ]]; then
-    source ~/.zshrc
-fi
 
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
