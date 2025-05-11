@@ -6,6 +6,9 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Linuxbrew PATH
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
+# Go PATH
+export GOPATH=$HOME/go
+
 # Unified path setting with all directories
 typeset -U path=(
     '/home/linuxbrew/.linuxbrew/bin'
@@ -18,6 +21,7 @@ typeset -U path=(
     '/bin'
     '/snap/bin'
     '/home/thomas/.foundry/bin'
+    '/home/thomas/.cargo/bin'
     '/home/thomas/.local/scripts'
     '/home/thomas/dev'
 )

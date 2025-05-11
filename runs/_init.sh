@@ -22,14 +22,15 @@ sudo apt-get install -y jq xclip parallel ripgrep
 sudo apt-get install -y awesome
 
 # # Initialize Homebrew
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 #
 # # Add Homebrew to PATH
-# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bashrc
-# source ~/.bashrc
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bashrc
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+source ~/.bashrc
 #
 # # Install packages
-# brew install gh fzf gcc go jq medusa node ripgrep solc-select tmux neovim
+brew install gh fzf gcc jq medusa node ripgrep solc-select tmux neovim 
 #
 # curl -L https://foundry.paradigm.xyz | bash
 # foundryup
